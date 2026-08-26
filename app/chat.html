@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -12,10 +13,11 @@
     <link rel="stylesheet" href="../css/light.css">
     <link rel="stylesheet" href="../css/gothic.css">
 
+
     <style>
 
         /* =====================================================
-           TALK ENTRANCE
+           TALK PAGE
            ===================================================== */
 
         .talk-shell {
@@ -51,10 +53,6 @@
             letter-spacing: -.05em;
         }
 
-        .talk-intro h1 span {
-            font-style: italic;
-        }
-
         .talk-intro p {
             margin-top: 20px;
 
@@ -65,7 +63,9 @@
         }
 
 
-        /* ---------- CHOICES ---------- */
+        /* =====================================================
+           MAIN TALK CHOICES
+           ===================================================== */
 
         .talk-paths {
             display: grid;
@@ -87,6 +87,8 @@
             border: 1px solid rgba(255,255,255,.65);
 
             background: rgba(255,255,255,.28);
+
+            color: inherit;
 
             box-shadow:
                 inset 0 1px 0 rgba(255,255,255,.78),
@@ -135,7 +137,7 @@
         }
 
 
-        /* ---------- TEXT ---------- */
+        /* ---------- CARD TEXT ---------- */
 
         .path-copy {
             display: flex;
@@ -178,7 +180,210 @@
         }
 
 
-        /* ---------- BACK ---------- */
+        /* =====================================================
+           SUBCATEGORY SCREEN
+           ===================================================== */
+
+        .subcategory-screen {
+            max-width: 900px;
+        }
+
+        .subcategory-screen[hidden] {
+            display: none;
+        }
+
+
+        /* ---------- RETURN ---------- */
+
+        .subcategory-back {
+            margin-bottom: 45px;
+            padding: 0;
+
+            border: 0;
+            background: none;
+
+            color: inherit;
+
+            font: inherit;
+            font-size: .75rem;
+
+            opacity: .55;
+
+            cursor: pointer;
+
+            transition: opacity .2s ease;
+        }
+
+        .subcategory-back:hover {
+            opacity: 1;
+        }
+
+
+        /* ---------- SUBCATEGORY INTRO ---------- */
+
+        .subcategory-intro {
+            max-width: 700px;
+            margin-bottom: 32px;
+        }
+
+        .subcategory-intro h2 {
+            margin: 0;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: -.04em;
+        }
+
+        .subcategory-intro p {
+            margin-top: 16px;
+
+            font-size: .9rem;
+            line-height: 1.7;
+
+            opacity: .6;
+        }
+
+
+        /* ---------- SUBCATEGORY OPTIONS ---------- */
+
+        .subcategory-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .subcategory-option {
+            min-height: 76px;
+            padding: 18px 20px;
+
+            display: flex;
+            align-items: center;
+
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,.65);
+
+            background: rgba(255,255,255,.28);
+
+            color: inherit;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1rem;
+            text-align: left;
+
+            cursor: pointer;
+
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,.75),
+                0 12px 30px rgba(79,59,98,.05);
+
+            transition:
+                transform .2s ease,
+                background .2s ease;
+        }
+
+        .subcategory-option:hover {
+            transform: translateY(-2px);
+            background: rgba(255,255,255,.45);
+        }
+
+
+        /* =====================================================
+           CUSTOM SPACE
+           ===================================================== */
+
+        .custom-space {
+            margin-top: 32px;
+            padding: 25px;
+
+            border-radius: 22px;
+
+            background: rgba(255,255,255,.18);
+
+            border: 1px solid rgba(255,255,255,.55);
+        }
+
+        .custom-space-heading {
+            margin: 0 0 15px;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.05rem;
+        }
+
+        .custom-space-entry {
+            display: flex;
+            gap: 10px;
+        }
+
+        .custom-space-entry input {
+            flex: 1;
+
+            min-width: 0;
+            padding: 14px 16px;
+
+            border-radius: 16px;
+            border: 1px solid rgba(100,80,110,.16);
+
+            background: rgba(255,255,255,.52);
+
+            color: inherit;
+
+            font: inherit;
+
+            outline: none;
+        }
+
+        .custom-space-entry input:focus {
+            border-color: rgba(150,115,165,.45);
+        }
+
+        .custom-space-entry button {
+            padding: 14px 20px;
+
+            border: 0;
+            border-radius: 16px;
+
+            background: rgba(126,95,145,.82);
+
+            color: white;
+
+            font: inherit;
+            font-weight: 600;
+
+            cursor: pointer;
+        }
+
+
+        /* ---------- SKIP CATEGORIES ---------- */
+
+        .skip-categories {
+            margin-top: 20px;
+            padding: 8px 0;
+
+            border: 0;
+            background: none;
+
+            color: inherit;
+
+            font: inherit;
+            font-size: .82rem;
+
+            opacity: .62;
+
+            cursor: pointer;
+
+            transition: opacity .2s ease;
+        }
+
+        .skip-categories:hover {
+            opacity: 1;
+        }
+
+
+        /* =====================================================
+           BACK TO YOUR SPACE
+           ===================================================== */
 
         .talk-back {
             margin-top: 35px;
@@ -200,7 +405,7 @@
 
 
         /* =====================================================
-           GOTHIC
+           GOTHIC — MAIN TALK CARDS
            ===================================================== */
 
         body[data-theme="gothic"] .talk-path {
@@ -219,6 +424,7 @@
 
         body[data-theme="gothic"] .path-number {
             background: rgba(255,255,255,.045);
+            color: #cfc3d4;
         }
 
         body[data-theme="gothic"] .talk-path.listen {
@@ -234,24 +440,66 @@
                     transparent 34%
                 ),
                 rgba(255,255,255,.025);
-                }
+        }
+
         body[data-theme="gothic"] .path-copy strong {
             color: #ddd4df;
         }
-        
+
         body[data-theme="gothic"] .path-copy span {
             color: #aaa0ad;
         }
-        
-        body[data-theme="gothic"] .path-number {
-            color: #cfc3d4;
-        }
-        
+
         body[data-theme="gothic"] .talk-back {
             color: #aaa0ad;
         }
 
-        /* ---------- MOBILE ---------- */
+
+        /* =====================================================
+           GOTHIC — SUBCATEGORIES
+           ===================================================== */
+
+        body[data-theme="gothic"] .subcategory-option {
+            background: rgba(255,255,255,.025);
+
+            border-color: rgba(220,205,225,.08);
+
+            color: #ddd4df;
+
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,.035),
+                0 15px 35px rgba(0,0,0,.20);
+        }
+
+        body[data-theme="gothic"] .subcategory-option:hover {
+            background: rgba(255,255,255,.05);
+        }
+
+        body[data-theme="gothic"] .custom-space {
+            background: rgba(255,255,255,.025);
+            border-color: rgba(220,205,225,.08);
+        }
+
+        body[data-theme="gothic"] .custom-space-entry input {
+            background: rgba(255,255,255,.045);
+
+            border-color: rgba(220,205,225,.10);
+
+            color: #ddd4df;
+        }
+
+        body[data-theme="gothic"] .custom-space-entry input::placeholder {
+            color: #827987;
+        }
+
+        body[data-theme="gothic"] .custom-space-entry button {
+            background: #65516f;
+        }
+
+
+        /* =====================================================
+           MOBILE
+           ===================================================== */
 
         @media (max-width: 700px) {
 
@@ -272,14 +520,28 @@
             .talk-intro {
                 margin-bottom: 35px;
             }
+
+            .subcategory-options {
+                grid-template-columns: 1fr;
+            }
+
+            .custom-space-entry {
+                flex-direction: column;
+            }
+
         }
 
     </style>
+
 </head>
 
 
 <body data-theme="light">
 
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
 
 <header class="site-header">
 
@@ -328,8 +590,14 @@
 </header>
 
 
+<!-- =====================================================
+     TALK
+     ===================================================== -->
+
 <main class="talk-shell">
 
+
+    <!-- INTRO -->
 
     <section class="talk-intro">
 
@@ -348,14 +616,21 @@
     </section>
 
 
+    <!-- =================================================
+         8 MAIN TALK PATHS
+         ================================================= -->
 
     <section class="talk-paths">
 
 
-        <button class="talk-path"
-                data-path="release">
+        <button
+            class="talk-path"
+            data-path="release"
+            type="button">
 
-            <span class="path-number">01</span>
+            <span class="path-number">
+                01
+            </span>
 
             <span class="path-copy">
 
@@ -372,11 +647,14 @@
         </button>
 
 
+        <button
+            class="talk-path"
+            data-path="person"
+            type="button">
 
-        <button class="talk-path"
-                data-path="person">
-
-            <span class="path-number">02</span>
+            <span class="path-number">
+                02
+            </span>
 
             <span class="path-copy">
 
@@ -393,11 +671,14 @@
         </button>
 
 
+        <button
+            class="talk-path"
+            data-path="event"
+            type="button">
 
-        <button class="talk-path"
-                data-path="event">
-
-            <span class="path-number">03</span>
+            <span class="path-number">
+                03
+            </span>
 
             <span class="path-copy">
 
@@ -414,11 +695,14 @@
         </button>
 
 
+        <button
+            class="talk-path"
+            data-path="off"
+            type="button">
 
-        <button class="talk-path"
-                data-path="off">
-
-            <span class="path-number">04</span>
+            <span class="path-number">
+                04
+            </span>
 
             <span class="path-copy">
 
@@ -435,11 +719,14 @@
         </button>
 
 
+        <button
+            class="talk-path"
+            data-path="today"
+            type="button">
 
-        <button class="talk-path"
-                data-path="today">
-
-            <span class="path-number">05</span>
+            <span class="path-number">
+                05
+            </span>
 
             <span class="path-copy">
 
@@ -456,11 +743,14 @@
         </button>
 
 
+        <button
+            class="talk-path"
+            data-path="think"
+            type="button">
 
-        <button class="talk-path"
-                data-path="think">
-
-            <span class="path-number">06</span>
+            <span class="path-number">
+                06
+            </span>
 
             <span class="path-copy">
 
@@ -477,11 +767,14 @@
         </button>
 
 
+        <button
+            class="talk-path"
+            data-path="pause"
+            type="button">
 
-        <button class="talk-path"
-                data-path="pause">
-
-            <span class="path-number">07</span>
+            <span class="path-number">
+                07
+            </span>
 
             <span class="path-copy">
 
@@ -498,11 +791,14 @@
         </button>
 
 
+        <button
+            class="talk-path listen"
+            data-path="listen"
+            type="button">
 
-        <button class="talk-path listen"
-                data-path="listen">
-
-            <span class="path-number">08</span>
+            <span class="path-number">
+                08
+            </span>
 
             <span class="path-copy">
 
@@ -522,8 +818,113 @@
     </section>
 
 
-    <a href="index.html"
-       class="talk-back">
+    <!-- =================================================
+         SUBCATEGORY SCREEN
+         ================================================= -->
+
+    <section
+        class="subcategory-screen"
+        id="subcategoryScreen"
+        hidden>
+
+
+        <button
+            class="subcategory-back"
+            id="subcategoryBack"
+            type="button">
+
+            ← Choose another space
+
+        </button>
+
+
+        <div class="subcategory-intro">
+
+            <div
+                class="talk-kicker"
+                id="subcategoryKicker">
+
+                YOUR SPACE
+
+            </div>
+
+
+            <h2 id="subcategoryHeading">
+                Start here.
+            </h2>
+
+
+            <p id="subcategoryIntro">
+                Choose what comes closest.
+            </p>
+
+        </div>
+
+
+        <div
+            class="subcategory-options"
+            id="subcategoryOptions">
+        </div>
+
+
+        <!-- CUSTOM OPTION -->
+
+        <div
+            class="custom-space"
+            id="customSpace">
+
+            <p
+                class="custom-space-heading"
+                id="customSpaceHeading">
+
+                Not found here? You name it.
+
+            </p>
+
+
+            <div class="custom-space-entry">
+
+                <input
+                    type="text"
+                    id="customSpaceInput"
+                    maxlength="80"
+                    autocomplete="off"
+                    placeholder="Name this space...">
+
+
+                <button
+                    type="button"
+                    id="customSpaceButton">
+
+                    Use my space
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SKIP EVERYTHING -->
+
+        <button
+            type="button"
+            class="skip-categories"
+            id="skipCategories">
+
+            None of these — let me talk →
+
+        </button>
+
+
+    </section>
+
+
+    <!-- BACK TO MAIN APP -->
+
+    <a
+        href="index.html"
+        class="talk-back">
 
         ← Back to Your Space
 
@@ -533,48 +934,415 @@
 </main>
 
 
+<!-- =====================================================
+     JAVASCRIPT LIBRARIES
+     ===================================================== -->
+
 <script src="../js/theme.js"></script>
 
+<script src="../js/conversation-paths.js"></script>
+
+
+<!-- =====================================================
+     TALK INTERACTION
+     ===================================================== -->
 
 <script>
-
-    /*
-       Temporary interaction.
-
-       We are NOT starting the actual conversation yet.
-
-       This simply remembers which doorway
-       the user selected so our next screen
-       can respond appropriately.
-    */
 
     const talkPaths =
         document.querySelectorAll(".talk-path");
 
+    const talkPathSection =
+        document.querySelector(".talk-paths");
 
-    talkPaths.forEach(path => {
+    const talkIntro =
+        document.querySelector(".talk-intro");
 
-        path.addEventListener("click", () => {
+    const subcategoryScreen =
+        document.getElementById("subcategoryScreen");
 
-            const selectedPath =
-                path.dataset.path;
+    const subcategoryKicker =
+        document.getElementById("subcategoryKicker");
 
-            sessionStorage.setItem(
-                "blendingInTalkPath",
-                selectedPath
+    const subcategoryHeading =
+        document.getElementById("subcategoryHeading");
+
+    const subcategoryIntro =
+        document.getElementById("subcategoryIntro");
+
+    const subcategoryOptions =
+        document.getElementById("subcategoryOptions");
+
+    const subcategoryBack =
+        document.getElementById("subcategoryBack");
+
+    const customSpace =
+        document.getElementById("customSpace");
+
+    const customSpaceHeading =
+        document.getElementById("customSpaceHeading");
+
+    const customSpaceInput =
+        document.getElementById("customSpaceInput");
+
+    const customSpaceButton =
+        document.getElementById("customSpaceButton");
+
+    const skipCategories =
+        document.getElementById("skipCategories");
+
+
+    /* =====================================================
+       SAVE THE USER'S CHOICE
+       ===================================================== */
+
+    function saveConversationChoice(
+        pathKey,
+        label,
+        type
+    ) {
+
+        sessionStorage.setItem(
+            "blendingInTalkPath",
+            pathKey
+        );
+
+        sessionStorage.setItem(
+            "blendingInTalkLabel",
+            label
+        );
+
+        sessionStorage.setItem(
+            "blendingInTalkType",
+            type
+        );
+
+        console.log({
+            path: pathKey,
+            label: label,
+            type: type
+        });
+
+    }
+
+
+    /* =====================================================
+       SHOW A CATEGORY
+       ===================================================== */
+
+    function openConversationPath(pathKey) {
+
+        const path =
+            window.conversationPaths?.[pathKey];
+
+        if (!path) {
+            console.error(
+                "Conversation path not found:",
+                pathKey
             );
 
-            /*
-             Conversation screen comes next.
-             For now we deliberately stop here.
-            */
+            return;
+        }
 
-            console.log(
-                "Selected talk path:",
-                selectedPath
+
+        /*
+           OPTION 08:
+           Skip categories completely.
+        */
+
+        if (path.directToConversation) {
+
+            saveConversationChoice(
+                pathKey,
+                path.title,
+                "direct"
+            );
+
+            showConversationReady(
+                path.heading,
+                path.intro
+            );
+
+            return;
+        }
+
+
+        /*
+           Hide main entrance.
+        */
+
+        talkIntro.hidden = true;
+        talkPathSection.hidden = true;
+
+
+        /*
+           Show selected category.
+        */
+
+        subcategoryScreen.hidden = false;
+
+        subcategoryKicker.textContent =
+            `${path.number} · ${path.title}`;
+
+        subcategoryHeading.textContent =
+            path.heading;
+
+        subcategoryIntro.textContent =
+            path.intro;
+
+
+        /*
+           Reset old content.
+        */
+
+        subcategoryOptions.innerHTML = "";
+
+        customSpace.hidden = false;
+
+        skipCategories.hidden = false;
+
+        customSpaceInput.value = "";
+
+
+        /*
+           Load custom-space wording
+           from conversation-paths.js
+        */
+
+        if (window.conversationCustom) {
+
+            customSpaceHeading.textContent =
+                window.conversationCustom.heading;
+
+            customSpaceInput.placeholder =
+                window.conversationCustom.placeholder;
+
+            customSpaceButton.textContent =
+                window.conversationCustom.buttonLabel;
+
+        }
+
+
+        /*
+           Create the buttons dynamically.
+        */
+
+        path.options.forEach(option => {
+
+            const button =
+                document.createElement("button");
+
+            button.type = "button";
+
+            button.className =
+                "subcategory-option";
+
+            button.textContent =
+                option;
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    saveConversationChoice(
+                        pathKey,
+                        option,
+                        "subcategory"
+                    );
+
+                    showConversationReady(
+                        path.heading,
+                        option
+                    );
+
+                }
+            );
+
+
+            subcategoryOptions.appendChild(
+                button
             );
 
         });
+
+
+        /*
+           CUSTOM USER-NAMED SPACE
+        */
+
+        customSpaceButton.onclick = () => {
+
+            const customName =
+                customSpaceInput.value.trim();
+
+            if (!customName) {
+
+                customSpaceInput.focus();
+
+                return;
+            }
+
+
+            saveConversationChoice(
+                pathKey,
+                customName,
+                "custom"
+            );
+
+
+            showConversationReady(
+                "Your space.",
+                customName
+            );
+
+        };
+
+
+        /*
+           ENTER KEY ALSO ACCEPTS
+           THE CUSTOM SPACE NAME
+        */
+
+        customSpaceInput.onkeydown = event => {
+
+            if (event.key === "Enter") {
+
+                event.preventDefault();
+
+                customSpaceButton.click();
+
+            }
+
+        };
+
+
+        /*
+           NONE OF THESE
+        */
+
+        skipCategories.onclick = () => {
+
+            saveConversationChoice(
+                pathKey,
+                window.conversationEscape?.label
+                    || "None of these — let me talk",
+                "unlabeled"
+            );
+
+
+            showConversationReady(
+                "I'm here.",
+                "Start wherever you want."
+            );
+
+        };
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+    /* =====================================================
+       TEMPORARY CONVERSATION-READY SCREEN
+
+       The real conversation box comes next.
+       ===================================================== */
+
+    function showConversationReady(
+        heading,
+        intro
+    ) {
+
+        talkIntro.hidden = true;
+
+        talkPathSection.hidden = true;
+
+        subcategoryScreen.hidden = false;
+
+
+        subcategoryKicker.textContent =
+            "YOUR SPACE";
+
+        subcategoryHeading.textContent =
+            heading;
+
+        subcategoryIntro.textContent =
+            intro;
+
+
+        /*
+           Remove choices because
+           the user has finished selecting.
+        */
+
+        subcategoryOptions.innerHTML = "";
+
+        customSpace.hidden = true;
+
+        skipCategories.hidden = true;
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+    /* =====================================================
+       RETURN TO MAIN 8 OPTIONS
+       ===================================================== */
+
+    subcategoryBack.addEventListener(
+        "click",
+        () => {
+
+            subcategoryScreen.hidden = true;
+
+            talkIntro.hidden = false;
+
+            talkPathSection.hidden = false;
+
+            subcategoryOptions.innerHTML = "";
+
+            customSpace.hidden = false;
+
+            skipCategories.hidden = false;
+
+            customSpaceInput.value = "";
+
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+    );
+
+
+    /* =====================================================
+       CONNECT THE 8 MAIN CARDS
+       ===================================================== */
+
+    talkPaths.forEach(pathButton => {
+
+        pathButton.addEventListener(
+            "click",
+            () => {
+
+                openConversationPath(
+                    pathButton.dataset.path
+                );
+
+            }
+        );
 
     });
 
