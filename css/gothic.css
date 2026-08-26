@@ -1,1 +1,432 @@
+/* =========================================================
+   BLENDING IN™ · INTEGRATED PARALLELS
+   GOTHIC WORLD
+   ========================================================= */
 
+body[data-theme="gothic"] {
+    color: #ddd4df;
+
+    background:
+        radial-gradient(
+            circle at 72% 25%,
+            rgba(92, 75, 120, 0.28),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 18% 70%,
+            rgba(70, 49, 76, 0.25),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #090a0d 0%,
+            #111118 32%,
+            #18131c 68%,
+            #08090c 100%
+        );
+
+    background-attachment: fixed;
+}
+
+
+/* ---------- ATMOSPHERE ---------- */
+
+body[data-theme="gothic"]::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 70% 10%,
+            rgba(200, 198, 225, 0.08),
+            transparent 26%
+        ),
+        linear-gradient(
+            180deg,
+            transparent 40%,
+            rgba(17, 13, 22, 0.40)
+        );
+}
+
+
+/* ---------- HEADER ---------- */
+
+body[data-theme="gothic"] .site-header {
+    color: #d7cedc;
+}
+
+body[data-theme="gothic"] .brand-name {
+    color: #eee8ef;
+}
+
+body[data-theme="gothic"] .brand-subtitle {
+    color: #9d91a4;
+}
+
+body[data-theme="gothic"] .nav-app {
+    color: #e6dce8;
+
+    background: rgba(255,255,255,0.035);
+
+    border-color: rgba(210,194,218,0.18);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.06),
+        0 8px 25px rgba(0,0,0,0.25);
+}
+
+body[data-theme="gothic"] .nav-app:hover {
+    background: rgba(255,255,255,0.075);
+}
+
+
+/* ---------- TOGGLE ---------- */
+
+body[data-theme="gothic"] .theme-toggle {
+    color: #cfc3d4;
+}
+
+body[data-theme="gothic"] .toggle-track {
+    background:
+        linear-gradient(
+            135deg,
+            #292330,
+            #15151d
+        );
+
+    border-color: rgba(218,207,223,0.15);
+}
+
+body[data-theme="gothic"] .toggle-circle {
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #eee8ef,
+            #aaa0b3 45%,
+            #514a5b 100%
+        );
+
+    box-shadow:
+        0 0 14px rgba(213,201,221,0.24);
+}
+
+
+/* ---------- HERO ---------- */
+
+body[data-theme="gothic"] .eyebrow {
+    color: #96889f;
+}
+
+body[data-theme="gothic"] .hero h1 {
+    color: #e8e1e9;
+
+    text-shadow:
+        0 8px 30px rgba(0,0,0,0.55);
+}
+
+body[data-theme="gothic"] .hero h1 span {
+    color: #a994ae;
+}
+
+body[data-theme="gothic"] .hero-copy {
+    color: #b8adb9;
+}
+
+body[data-theme="gothic"] .hero-philosophy {
+    color: #b9a9bd;
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+body[data-theme="gothic"] .primary-button {
+    color: #f4eff4;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6e5a76,
+            #45394f 55%,
+            #303440
+        );
+
+    border: 1px solid rgba(235,222,238,0.10);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.38),
+        inset 0 1px 0 rgba(255,255,255,0.10);
+}
+
+body[data-theme="gothic"] .primary-button:hover {
+    box-shadow:
+        0 16px 42px rgba(0,0,0,0.50),
+        0 0 20px rgba(119,91,130,0.12);
+}
+
+body[data-theme="gothic"] .secondary-button {
+    color: #d4c8d7;
+
+    background: rgba(255,255,255,0.025);
+
+    border-color: rgba(213,197,219,0.16);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.05),
+        0 10px 28px rgba(0,0,0,0.18);
+}
+
+
+/* =========================================================
+   THE TWO PARALLELS
+   ========================================================= */
+
+body[data-theme="gothic"] .hero-world::before {
+    content: "";
+
+    width: 430px;
+    height: 430px;
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(151,135,166,0.09),
+            transparent 65%
+        );
+
+    filter: blur(14px);
+}
+
+
+/* ---------- PLUM PARALLEL ---------- */
+
+body[data-theme="gothic"] .orb-one {
+    background:
+        radial-gradient(
+            circle at 29% 24%,
+            rgba(232,219,235,0.32),
+            transparent 18%
+        ),
+        radial-gradient(
+            circle at 62% 67%,
+            rgba(66,41,72,0.72),
+            transparent 48%
+        ),
+        linear-gradient(
+            145deg,
+            #69516f,
+            #3d3047 52%,
+            #1c1a24
+        );
+
+    border:
+        1px solid rgba(218,201,224,0.15);
+
+    box-shadow:
+        inset 18px 18px 38px rgba(255,255,255,0.07),
+        inset -22px -25px 45px rgba(0,0,0,0.38),
+        0 32px 70px rgba(0,0,0,0.48);
+}
+
+
+/* ---------- MOONSTONE PARALLEL ---------- */
+
+body[data-theme="gothic"] .orb-two {
+    background:
+        radial-gradient(
+            circle at 30% 24%,
+            rgba(220,225,238,0.30),
+            transparent 18%
+        ),
+        radial-gradient(
+            circle at 68% 65%,
+            rgba(44,50,67,0.75),
+            transparent 48%
+        ),
+        linear-gradient(
+            145deg,
+            #626778,
+            #383c4c 52%,
+            #171a22
+        );
+
+    border:
+        1px solid rgba(207,212,225,0.14);
+
+    box-shadow:
+        inset 18px 18px 38px rgba(255,255,255,0.06),
+        inset -22px -25px 45px rgba(0,0,0,0.42),
+        0 32px 70px rgba(0,0,0,0.52);
+}
+
+
+/* ---------- INTERSECTION ---------- */
+
+body[data-theme="gothic"] .shared-space {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(210,199,218,0.45),
+            rgba(117,92,128,0.48),
+            rgba(57,57,72,0.48)
+        );
+
+    box-shadow:
+        0 0 55px rgba(152,127,163,0.18);
+}
+
+
+/* ---------- SLOW MOVEMENT ---------- */
+
+body[data-theme="gothic"] .orb-one {
+    animation: gothicFloatOne 8s ease-in-out infinite;
+}
+
+body[data-theme="gothic"] .orb-two {
+    animation: gothicFloatTwo 9s ease-in-out infinite;
+}
+
+@keyframes gothicFloatOne {
+    0%, 100% {
+        transform: translate(-70px, -15px);
+    }
+
+    50% {
+        transform: translate(-73px, -22px);
+    }
+}
+
+@keyframes gothicFloatTwo {
+    0%, 100% {
+        transform: translate(70px, 15px);
+    }
+
+    50% {
+        transform: translate(73px, 8px);
+    }
+}
+
+
+/* ---------- AMBIENT ACTIVITY ---------- */
+
+body[data-theme="gothic"] .ambient-space {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.035),
+            rgba(105,83,113,0.055),
+            rgba(47,52,66,0.055)
+        );
+
+    border:
+        1px solid rgba(219,207,223,0.09);
+
+    box-shadow:
+        0 24px 60px rgba(0,0,0,0.32),
+        inset 0 1px 0 rgba(255,255,255,0.035);
+
+    backdrop-filter: blur(18px);
+}
+
+body[data-theme="gothic"] .ambient-heading {
+    color: #a99bac;
+}
+
+body[data-theme="gothic"] .status-dot {
+    background: #a88caf;
+
+    box-shadow:
+        0 0 15px rgba(168,140,175,0.48);
+}
+
+body[data-theme="gothic"] .status-item strong {
+    color: #d9cfdc;
+}
+
+body[data-theme="gothic"] .status-item span {
+    color: #958a99;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+body[data-theme="gothic"] .site-footer {
+    color: #aaa0ad;
+
+    border-top:
+        1px solid rgba(218,205,222,0.08);
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 900px) {
+
+    body[data-theme="gothic"] .orb-one {
+        animation-name: gothicFloatOneMobile;
+    }
+
+    body[data-theme="gothic"] .orb-two {
+        animation-name: gothicFloatTwoMobile;
+    }
+
+    @keyframes gothicFloatOneMobile {
+        0%, 100% {
+            transform: translate(-55px, -5px);
+        }
+
+        50% {
+            transform: translate(-58px, -12px);
+        }
+    }
+
+    @keyframes gothicFloatTwoMobile {
+        0%, 100% {
+            transform: translate(55px, 5px);
+        }
+
+        50% {
+            transform: translate(58px, -2px);
+        }
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    body[data-theme="gothic"] .orb-one {
+        animation-name: gothicFloatOneSmall;
+    }
+
+    body[data-theme="gothic"] .orb-two {
+        animation-name: gothicFloatTwoSmall;
+    }
+
+    @keyframes gothicFloatOneSmall {
+        0%, 100% {
+            transform: translate(-42px, -5px);
+        }
+
+        50% {
+            transform: translate(-45px, -10px);
+        }
+    }
+
+    @keyframes gothicFloatTwoSmall {
+        0%, 100% {
+            transform: translate(42px, 5px);
+        }
+
+        50% {
+            transform: translate(45px, 0);
+        }
+    }
+}
