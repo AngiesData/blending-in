@@ -247,6 +247,20 @@ const conversationPaths = {
    The user never has to choose a label before talking.
    ========================================================= */
 
+/* =========================================================
+   PERSONALIZE OR SKIP
+
+   Users can create their own label or skip labels entirely.
+   ========================================================= */
+
+const conversationCustom = {
+    heading: "Not found here? You name it.",
+    placeholder: "Name this space...",
+    buttonLabel: "Use my space",
+    value: "custom"
+};
+
+
 const conversationEscape = {
     label: "None of these — let me talk",
     value: "unlabeled"
@@ -258,4 +272,5 @@ const conversationEscape = {
    ========================================================= */
 
 window.conversationPaths = conversationPaths;
+window.conversationCustom = conversationCustom;
 window.conversationEscape = conversationEscape;
