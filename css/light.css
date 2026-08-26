@@ -1,1 +1,470 @@
+/* =========================================================
+   BLENDING IN™ · INTEGRATED PARALLELS
+   LIGHT WORLD
+   ========================================================= */
 
+
+/* ---------- LIGHT WORLD FOUNDATION ---------- */
+
+body[data-theme="light"] {
+    color: #443b52;
+
+    background:
+        radial-gradient(circle at 12% 18%,
+            rgba(255, 214, 226, 0.75),
+            transparent 30%),
+
+        radial-gradient(circle at 85% 22%,
+            rgba(210, 222, 255, 0.80),
+            transparent 34%),
+
+        radial-gradient(circle at 70% 78%,
+            rgba(222, 207, 255, 0.72),
+            transparent 32%),
+
+        radial-gradient(circle at 20% 85%,
+            rgba(209, 242, 232, 0.55),
+            transparent 28%),
+
+        linear-gradient(
+            135deg,
+            #fffafc 0%,
+            #f9f5ff 38%,
+            #f3f7ff 68%,
+            #fff8f4 100%
+        );
+
+    background-attachment: fixed;
+}
+
+
+/* ---------- SOFT ATMOSPHERE ---------- */
+
+body[data-theme="light"]::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+    z-index: -1;
+
+    background:
+        radial-gradient(circle at 50% 10%,
+            rgba(255,255,255,0.85),
+            transparent 24%),
+
+        radial-gradient(circle at 90% 70%,
+            rgba(255, 226, 210, 0.42),
+            transparent 28%);
+
+    filter: blur(8px);
+}
+
+
+/* ---------- HEADER ---------- */
+
+body[data-theme="light"] .site-header {
+    color: #51475f;
+}
+
+body[data-theme="light"] .brand-name {
+    color: #4c405d;
+}
+
+body[data-theme="light"] .nav-app {
+    color: #665473;
+
+    background: rgba(255, 255, 255, 0.40);
+
+    border-color: rgba(105, 83, 122, 0.25);
+
+    box-shadow:
+        0 8px 24px rgba(91, 72, 110, 0.08),
+        inset 0 1px 0 rgba(255,255,255,0.80);
+
+    backdrop-filter: blur(12px);
+}
+
+body[data-theme="light"] .nav-app:hover {
+    background: rgba(255, 255, 255, 0.72);
+
+    box-shadow:
+        0 12px 30px rgba(91, 72, 110, 0.12);
+}
+
+
+/* ---------- THEME TOGGLE ---------- */
+
+body[data-theme="light"] .theme-toggle {
+    color: #786788;
+}
+
+body[data-theme="light"] .toggle-track {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 226, 235, 0.88),
+            rgba(225, 216, 255, 0.88)
+        );
+
+    border-color: rgba(255,255,255,0.85);
+}
+
+body[data-theme="light"] .toggle-circle {
+    background:
+        linear-gradient(
+            135deg,
+            #f2a9bd,
+            #a995d7
+        );
+
+    box-shadow:
+        0 3px 10px rgba(126, 93, 147, 0.28);
+}
+
+
+/* ---------- HERO TYPOGRAPHY ---------- */
+
+body[data-theme="light"] .eyebrow {
+    color: #796987;
+}
+
+body[data-theme="light"] .hero h1 {
+    color: #45394f;
+
+    text-shadow:
+        0 2px 0 rgba(255,255,255,0.75),
+        0 15px 40px rgba(109, 84, 128, 0.08);
+}
+
+body[data-theme="light"] .hero h1 span {
+    color: #a16f8d;
+}
+
+body[data-theme="light"] .hero-copy {
+    color: #655b70;
+}
+
+body[data-theme="light"] .hero-philosophy {
+    color: #806c8b;
+}
+
+
+/* ---------- PRIMARY BUTTON ---------- */
+
+body[data-theme="light"] .primary-button {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b77f9e 0%,
+            #9a82bd 55%,
+            #829cc7 100%
+        );
+
+    box-shadow:
+        0 12px 28px rgba(133, 105, 157, 0.25),
+        inset 0 1px 0 rgba(255,255,255,0.28);
+}
+
+body[data-theme="light"] .primary-button:hover {
+    box-shadow:
+        0 17px 34px rgba(133, 105, 157, 0.32),
+        inset 0 1px 0 rgba(255,255,255,0.35);
+}
+
+
+/* ---------- SECONDARY BUTTON ---------- */
+
+body[data-theme="light"] .secondary-button {
+    color: #665672;
+
+    background: rgba(255,255,255,0.36);
+
+    border-color: rgba(103, 84, 118, 0.20);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.82),
+        0 8px 24px rgba(89, 70, 106, 0.07);
+
+    backdrop-filter: blur(10px);
+}
+
+body[data-theme="light"] .secondary-button:hover {
+    background: rgba(255,255,255,0.68);
+}
+
+
+/* =========================================================
+   INTEGRATED PARALLELS VISUAL
+   ========================================================= */
+
+body[data-theme="light"] .hero-world::before {
+    content: "";
+
+    width: 420px;
+    height: 420px;
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.65) 0%,
+            rgba(255,255,255,0.22) 42%,
+            transparent 70%
+        );
+
+    filter: blur(10px);
+}
+
+
+/* ---------- LEFT PARALLEL ---------- */
+
+body[data-theme="light"] .orb-one {
+    background:
+        radial-gradient(
+            circle at 28% 25%,
+            rgba(255,255,255,0.95) 0%,
+            rgba(255,255,255,0.30) 16%,
+            transparent 34%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(247, 177, 198, 0.95),
+            rgba(216, 157, 205, 0.88),
+            rgba(178, 160, 226, 0.92)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.68);
+
+    box-shadow:
+        inset 16px 18px 35px rgba(255,255,255,0.40),
+        inset -18px -20px 38px rgba(125, 88, 158, 0.16),
+        0 30px 60px rgba(158, 115, 158, 0.18);
+}
+
+
+/* ---------- RIGHT PARALLEL ---------- */
+
+body[data-theme="light"] .orb-two {
+    background:
+        radial-gradient(
+            circle at 30% 24%,
+            rgba(255,255,255,0.96) 0%,
+            rgba(255,255,255,0.28) 17%,
+            transparent 35%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(164, 205, 229, 0.92),
+            rgba(157, 184, 226, 0.88),
+            rgba(173, 155, 220, 0.92)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.68);
+
+    box-shadow:
+        inset 16px 18px 35px rgba(255,255,255,0.38),
+        inset -18px -20px 38px rgba(79, 100, 161, 0.15),
+        0 30px 60px rgba(103, 128, 174, 0.18);
+}
+
+
+/* ---------- SHARED SPACE ---------- */
+
+body[data-theme="light"] .shared-space {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.95),
+            rgba(229, 194, 230, 0.90),
+            rgba(199, 183, 235, 0.90)
+        );
+
+    box-shadow:
+        0 0 60px rgba(255,255,255,0.80);
+}
+
+
+/* ---------- ORB MOTION ---------- */
+
+body[data-theme="light"] .orb-one {
+    animation: lightFloatOne 7s ease-in-out infinite;
+}
+
+body[data-theme="light"] .orb-two {
+    animation: lightFloatTwo 8s ease-in-out infinite;
+}
+
+@keyframes lightFloatOne {
+
+    0%,
+    100% {
+        transform:
+            translate(-70px, -15px)
+            rotate(-2deg);
+    }
+
+    50% {
+        transform:
+            translate(-74px, -23px)
+            rotate(1deg);
+    }
+}
+
+@keyframes lightFloatTwo {
+
+    0%,
+    100% {
+        transform:
+            translate(70px, 15px)
+            rotate(2deg);
+    }
+
+    50% {
+        transform:
+            translate(74px, 7px)
+            rotate(-1deg);
+    }
+}
+
+
+/* =========================================================
+   AMBIENT SPACE
+   ========================================================= */
+
+body[data-theme="light"] .ambient-space {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.55),
+            rgba(249, 240, 250, 0.42),
+            rgba(236, 242, 255, 0.45)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.78);
+
+    box-shadow:
+        0 20px 55px rgba(96, 74, 116, 0.08),
+        inset 0 1px 0 rgba(255,255,255,0.90);
+
+    backdrop-filter: blur(18px);
+}
+
+body[data-theme="light"] .ambient-heading {
+    color: #796982;
+}
+
+body[data-theme="light"] .status-dot {
+    background:
+        linear-gradient(
+            135deg,
+            #d38eaa,
+            #9b8dcc
+        );
+
+    box-shadow:
+        0 0 14px rgba(169, 127, 185, 0.45);
+}
+
+body[data-theme="light"] .status-item strong {
+    color: #51455c;
+}
+
+body[data-theme="light"] .status-item span {
+    color: #766b7c;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+body[data-theme="light"] .site-footer {
+    color: #665b70;
+
+    border-top:
+        1px solid rgba(94, 76, 109, 0.10);
+}
+
+
+/* ---------- MOBILE ORB ADJUSTMENT ---------- */
+
+@media (max-width: 900px) {
+
+    body[data-theme="light"] .orb-one {
+        animation-name: lightFloatOneMobile;
+    }
+
+    body[data-theme="light"] .orb-two {
+        animation-name: lightFloatTwoMobile;
+    }
+
+    @keyframes lightFloatOneMobile {
+
+        0%,
+        100% {
+            transform: translate(-55px, -5px);
+        }
+
+        50% {
+            transform: translate(-58px, -12px);
+        }
+    }
+
+    @keyframes lightFloatTwoMobile {
+
+        0%,
+        100% {
+            transform: translate(55px, 5px);
+        }
+
+        50% {
+            transform: translate(58px, -2px);
+        }
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    body[data-theme="light"] .orb-one {
+        animation-name: lightFloatOneSmall;
+    }
+
+    body[data-theme="light"] .orb-two {
+        animation-name: lightFloatTwoSmall;
+    }
+
+    @keyframes lightFloatOneSmall {
+
+        0%,
+        100% {
+            transform: translate(-42px, -5px);
+        }
+
+        50% {
+            transform: translate(-45px, -10px);
+        }
+    }
+
+    @keyframes lightFloatTwoSmall {
+
+        0%,
+        100% {
+            transform: translate(42px, 5px);
+        }
+
+        50% {
+            transform: translate(45px, 0);
+        }
+    }
+}
