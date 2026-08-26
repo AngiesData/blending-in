@@ -1,1 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Talk | Blending In</title>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/light.css">
+    <link rel="stylesheet" href="../css/gothic.css">
+
+    <style>
+
+        /* =====================================================
+           TALK ENTRANCE
+           ===================================================== */
+
+        .talk-shell {
+            width: min(1100px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 65px 0 90px;
+        }
+
+
+        /* ---------- INTRO ---------- */
+
+        .talk-intro {
+            max-width: 720px;
+            margin-bottom: 48px;
+        }
+
+        .talk-kicker {
+            margin-bottom: 14px;
+
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+
+            opacity: .5;
+        }
+
+        .talk-intro h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(3.4rem, 7vw, 6rem);
+            font-weight: 400;
+            line-height: .95;
+            letter-spacing: -.05em;
+        }
+
+        .talk-intro h1 span {
+            font-style: italic;
+        }
+
+        .talk-intro p {
+            margin-top: 20px;
+
+            font-size: 1rem;
+            line-height: 1.8;
+
+            opacity: .65;
+        }
+
+
+        /* ---------- CHOICES ---------- */
+
+        .talk-paths {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .talk-path {
+            min-height: 125px;
+            padding: 23px 25px;
+
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            position: relative;
+
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,.65);
+
+            background: rgba(255,255,255,.28);
+
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,.78),
+                0 15px 38px rgba(79,59,98,.06);
+
+            backdrop-filter: blur(15px);
+
+            cursor: pointer;
+
+            transition:
+                transform .22s ease,
+                box-shadow .22s ease,
+                background .22s ease;
+        }
+
+        .talk-path:hover {
+            transform: translateY(-3px);
+
+            background: rgba(255,255,255,.44);
+
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,.88),
+                0 20px 45px rgba(79,59,98,.10);
+        }
+
+
+        /* ---------- NUMBER ---------- */
+
+        .path-number {
+            width: 42px;
+            height: 42px;
+
+            flex: 0 0 42px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            font-family: Georgia, serif;
+            font-size: .85rem;
+
+            background: rgba(255,255,255,.42);
+
+            opacity: .7;
+        }
+
+
+        /* ---------- TEXT ---------- */
+
+        .path-copy {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .path-copy strong {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
+
+        .path-copy span {
+            margin-top: 5px;
+
+            font-size: .76rem;
+            line-height: 1.5;
+
+            opacity: .55;
+        }
+
+
+        /* ---------- LAST OPTION ---------- */
+
+        .talk-path.listen {
+            grid-column: span 2;
+
+            background:
+                radial-gradient(
+                    circle at 82% 30%,
+                    rgba(206,190,255,.30),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 65% 80%,
+                    rgba(255,199,219,.22),
+                    transparent 34%
+                ),
+                rgba(255,255,255,.30);
+        }
+
+
+        /* ---------- BACK ---------- */
+
+        .talk-back {
+            margin-top: 35px;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            font-size: .75rem;
+
+            opacity: .55;
+
+            transition: opacity .2s ease;
+        }
+
+        .talk-back:hover {
+            opacity: 1;
+        }
+
+
+        /* =====================================================
+           GOTHIC
+           ===================================================== */
+
+        body[data-theme="gothic"] .talk-path {
+            background: rgba(255,255,255,.025);
+
+            border-color: rgba(220,205,225,.08);
+
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,.035),
+                0 18px 45px rgba(0,0,0,.24);
+        }
+
+        body[data-theme="gothic"] .talk-path:hover {
+            background: rgba(255,255,255,.05);
+        }
+
+        body[data-theme="gothic"] .path-number {
+            background: rgba(255,255,255,.045);
+        }
+
+        body[data-theme="gothic"] .talk-path.listen {
+            background:
+                radial-gradient(
+                    circle at 82% 30%,
+                    rgba(112,86,130,.18),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at 65% 80%,
+                    rgba(62,69,94,.15),
+                    transparent 34%
+                ),
+                rgba(255,255,255,.025);
+        }
+
+
+        /* ---------- MOBILE ---------- */
+
+        @media (max-width: 700px) {
+
+            .talk-shell {
+                width: min(100% - 28px, 1100px);
+                padding-top: 45px;
+            }
+
+            .talk-paths {
+                grid-template-columns: 1fr;
+            }
+
+            .talk-path,
+            .talk-path.listen {
+                grid-column: span 1;
+            }
+
+            .talk-intro {
+                margin-bottom: 35px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body data-theme="light">
+
+
+<header class="site-header">
+
+    <a href="index.html" class="brand">
+
+        <span class="brand-name">
+            Blending In™
+        </span>
+
+        <span class="brand-subtitle">
+            Integrated Parallels
+        </span>
+
+    </a>
+
+
+    <nav class="main-nav">
+
+        <a href="index.html">
+            Your Space
+        </a>
+
+        <a href="settings.html">
+            Settings
+        </a>
+
+    </nav>
+
+
+    <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Change appearance">
+
+        <span>☀</span>
+
+        <span class="toggle-track">
+            <span class="toggle-circle"></span>
+        </span>
+
+        <span>☾</span>
+
+    </button>
+
+</header>
+
+
+<main class="talk-shell">
+
+
+    <section class="talk-intro">
+
+        <div class="talk-kicker">
+            TALK
+        </div>
+
+        <h1>
+            Talk to me.
+        </h1>
+
+        <p>
+            I'll help you find the right space.
+        </p>
+
+    </section>
+
+
+
+    <section class="talk-paths">
+
+
+        <button class="talk-path"
+                data-path="release">
+
+            <span class="path-number">01</span>
+
+            <span class="path-copy">
+
+                <strong>
+                    Get something out
+                </strong>
+
+                <span>
+                    I need somewhere to put this.
+                </span>
+
+            </span>
+
+        </button>
+
+
+
+        <button class="talk-path"
+                data-path="person">
+
+            <span class="path-number">02</span>
+
+            <span class="path-copy">
+
+                <strong>
+                    Talk about someone
+                </strong>
+
+                <span>
+                    There's someone on my mind.
+                </span>
+
+            </span>
+
+        </button>
+
+
+
+        <button class="talk-path"
+                data-path="event">
+
+            <span class="path-number">03</span>
+
+            <span class="path-copy">
+
+                <strong>
+                    Talk about something that happened
+                </strong>
+
+                <span>
+                    Something happened.
+                </span>
+
+            </span>
+
+        </button>
+
+
+
+        <button class="talk-path"
+                data-path="off">
+
+            <span class="path-number">04</span>
+
+            <span class="path-copy">
+
+                <strong>
+                    Figure out why I feel off
+                </strong>
+
+                <span>
+                    I can't quite name it.
+                </span>
+
+            </span>
+
+        </button>
+
+
+
+        <button class="talk-path"
+                data-path="today">
+
+            <span class="path-number">05</span>
+
+            <span class="path-copy">
+
+                <strong>
+                    Get through today
+                </strong>
+
+                <span>
+                    One thing at a time.
+                </span>
+
+            </span>
+
+        </button>
+
+
+
+        <button class="talk-path"
+                data-path="think">
+
+            <span class="path-number">06</span>
+
+            <span class="path-copy">
+
+                <strong>
+                    Think something through
+                </strong>
+
+                <span>
+                    I need to sort this out.
+                </span>
+
+            </span>
+
+        </button>
+
+
+
+        <button class="talk-path"
+                data-path="pause">
+
+            <span class="path-number">07</span>
+
+            <span class="path-copy">
+
+                <strong>
+                    Stop myself from doing/saying something
+                </strong>
+
+                <span>
+                    Let me put it here first.
+                </span>
+
+            </span>
+
+        </button>
+
+
+
+        <button class="talk-path listen"
+                data-path="listen">
+
+            <span class="path-number">08</span>
+
+            <span class="path-copy">
+
+                <strong>
+                    I don't know — just listen
+                </strong>
+
+                <span>
+                    I'll start wherever I can.
+                </span>
+
+            </span>
+
+        </button>
+
+
+    </section>
+
+
+    <a href="index.html"
+       class="talk-back">
+
+        ← Back to Your Space
+
+    </a>
+
+
+</main>
+
+
+<script src="../js/theme.js"></script>
+
+
+<script>
+
+    /*
+       Temporary interaction.
+
+       We are NOT starting the actual conversation yet.
+
+       This simply remembers which doorway
+       the user selected so our next screen
+       can respond appropriately.
+    */
+
+    const talkPaths =
+        document.querySelectorAll(".talk-path");
+
+
+    talkPaths.forEach(path => {
+
+        path.addEventListener("click", () => {
+
+            const selectedPath =
+                path.dataset.path;
+
+            sessionStorage.setItem(
+                "blendingInTalkPath",
+                selectedPath
+            );
+
+            /*
+             Conversation screen comes next.
+             For now we deliberately stop here.
+            */
+
+            console.log(
+                "Selected talk path:",
+                selectedPath
+            );
+
+        });
+
+    });
+
+</script>
+
+
+</body>
+</html>
