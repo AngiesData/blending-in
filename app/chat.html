@@ -405,7 +405,308 @@
             opacity: 1;
         }
 
+        /* =====================================================
+           CONVERSATION ROOM
+           ===================================================== */
+        
+        .conversation-room {
+            width: 100%;
+            max-width: 900px;
+        }
+        
+        .conversation-room[hidden] {
+            display: none !important;
+        }
+        
+        
+        /* ---------- RETURN ---------- */
+        
+        .conversation-back {
+            margin-bottom: 45px;
+            padding: 0;
+        
+            border: 0;
+            background: none;
+        
+            color: inherit;
+        
+            font: inherit;
+            font-size: .75rem;
+        
+            opacity: .55;
+        
+            cursor: pointer;
+        
+            transition: opacity .2s ease;
+        }
+        
+        .conversation-back:hover {
+            opacity: 1;
+        }
+        
+        
+        /* ---------- INTRO ---------- */
+        
+        .conversation-intro {
+            max-width: 760px;
+            margin-bottom: 38px;
+        }
+        
+        .conversation-intro h2 {
+            margin: 0;
+        
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: -.04em;
+        }
+        
+        .conversation-intro p {
+            margin-top: 18px;
+        
+            font-size: .92rem;
+            line-height: 1.7;
+        
+            opacity: .62;
+        }
+        
+        
+        /* ---------- CONVERSATION AREA ---------- */
+        
+        .conversation-area {
+            width: 100%;
+            min-height: 390px;
+        
+            padding: 28px;
+        
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        
+            border-radius: 28px;
+            border: 1px solid rgba(255,255,255,.65);
+        
+            background:
+                radial-gradient(
+                    circle at 12% 20%,
+                    rgba(255,210,225,.16),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(202,195,255,.18),
+                    transparent 34%
+                ),
+                rgba(255,255,255,.22);
+        
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,.78),
+                0 18px 45px rgba(79,59,98,.07);
+        
+            backdrop-filter: blur(18px);
+        }
+        
+        
+        /* ---------- EMPTY STATE ---------- */
+        
+        .conversation-empty {
+            flex: 1;
+        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            padding: 40px 20px;
+        }
+        
+        .conversation-empty p {
+            margin: 0;
+        
+            max-width: 420px;
+        
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.15rem;
+            font-style: italic;
+            text-align: center;
+            line-height: 1.7;
+        
+            opacity: .48;
+        }
+        
+        
+        /* ---------- COMPOSER ---------- */
+        
+        .conversation-composer {
+            padding: 10px;
+        
+            border-radius: 22px;
+        
+            background: rgba(255,255,255,.42);
+        
+            border: 1px solid rgba(255,255,255,.72);
+        
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,.8);
+        }
+        
+        .conversation-composer textarea {
+            width: 100%;
+            min-height: 120px;
+        
+            padding: 18px;
+        
+            display: block;
+        
+            resize: vertical;
+        
+            border: 0;
+            outline: 0;
+        
+            border-radius: 17px;
+        
+            background: rgba(255,255,255,.32);
+        
+            color: inherit;
+        
+            font-family: inherit;
+            font-size: .95rem;
+            line-height: 1.65;
+        }
+        
+        .conversation-composer textarea::placeholder {
+            color: inherit;
+            opacity: .38;
+        }
+        
+        
+        /* ---------- CONTROLS ---------- */
+        
+        .conversation-controls {
+            padding: 10px 5px 3px;
+        
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        
+        .conversation-talk,
+        .conversation-send {
+            min-height: 44px;
+            padding: 11px 20px;
+        
+            border-radius: 15px;
+        
+            font: inherit;
+            font-size: .82rem;
+            font-weight: 600;
+        
+            cursor: pointer;
+        
+            transition:
+                transform .2s ease,
+                opacity .2s ease;
+        }
+        
+        .conversation-talk {
+            border: 1px solid rgba(100,80,110,.14);
+        
+            background: rgba(255,255,255,.38);
+        
+            color: inherit;
+        }
+        
+        .conversation-send {
+            margin-left: auto;
+        
+            border: 0;
+        
+            background: rgba(126,95,145,.82);
+        
+            color: #fff;
+        }
+        
+        .conversation-talk:hover,
+        .conversation-send:hover {
+            transform: translateY(-1px);
+        }
 
+        /* =====================================================
+           GOTHIC — CONVERSATION ROOM
+           ===================================================== */
+        
+        body[data-theme="gothic"] .conversation-area {
+            background:
+                radial-gradient(
+                    circle at 12% 20%,
+                    rgba(105,82,118,.12),
+                    transparent 34%
+                ),
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(65,72,97,.14),
+                    transparent 36%
+                ),
+                rgba(255,255,255,.022);
+        
+            border-color: rgba(220,205,225,.08);
+        
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,.035),
+                0 20px 50px rgba(0,0,0,.28);
+        }
+        
+        
+        body[data-theme="gothic"] .conversation-empty p {
+            color: #b8acbc;
+        }
+        
+        
+        body[data-theme="gothic"] .conversation-composer {
+            background: rgba(255,255,255,.028);
+        
+            border-color: rgba(220,205,225,.08);
+        
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,.035);
+        }
+        
+        
+        body[data-theme="gothic"] .conversation-composer textarea {
+            background: rgba(255,255,255,.035);
+        
+            color: #ddd4df;
+        }
+        
+        
+        body[data-theme="gothic"] .conversation-composer textarea::placeholder {
+            color: #827987;
+        }
+        
+        
+        body[data-theme="gothic"] .conversation-talk {
+            background: rgba(255,255,255,.04);
+        
+            border-color: rgba(220,205,225,.10);
+        
+            color: #cfc3d4;
+        }
+        
+        
+        body[data-theme="gothic"] .conversation-send {
+            background: #65516f;
+        
+            color: #fff;
+        }
+        
+        
+        body[data-theme="gothic"] .conversation-back {
+            color: #aaa0ad;
+        }
+
+
+        
         /* =====================================================
            GOTHIC — MAIN TALK CARDS
            ===================================================== */
@@ -920,7 +1221,87 @@
 
 
     </section>
+        <!-- =================================================
+         CONVERSATION ROOM
+         ================================================= -->
 
+    <section
+        class="conversation-room"
+        id="conversationRoom"
+        hidden>
+
+        <button
+            class="conversation-back"
+            id="conversationBack"
+            type="button">
+            ← Choose another space
+        </button>
+
+        <div class="conversation-intro">
+
+            <div
+                class="talk-kicker"
+                id="conversationKicker">
+                YOUR SPACE
+            </div>
+
+            <h2 id="conversationHeading">
+                Start wherever you are.
+            </h2>
+
+            <p id="conversationPrompt">
+                You don't have to make it make sense yet.
+            </p>
+
+        </div>
+
+
+        <div class="conversation-area">
+
+            <div
+                class="conversation-empty"
+                id="conversationEmpty">
+
+                <p>
+                    You don't have to make it make sense yet.
+                </p>
+
+            </div>
+
+
+            <div class="conversation-composer">
+
+                <textarea
+                    id="conversationInput"
+                    rows="5"
+                    maxlength="5000"
+                    placeholder="Type here..."
+                    aria-label="Write what you want to say"></textarea>
+
+
+                <div class="conversation-controls">
+
+                    <button
+                        type="button"
+                        class="conversation-talk"
+                        id="conversationTalk">
+                        ♫ Talk
+                    </button>
+
+                    <button
+                        type="button"
+                        class="conversation-send"
+                        id="conversationSend">
+                        Send
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
     <!-- BACK TO MAIN APP -->
 
@@ -993,16 +1374,40 @@
     const skipCategories =
         document.getElementById("skipCategories");
 
+    const conversationRoom =
+    document.getElementById("conversationRoom");
 
-    /* =====================================================
-       SAVE THE USER'S CHOICE
-       ===================================================== */
-
-    function saveConversationChoice(
-        pathKey,
-        label,
-        type
-    ) {
+    const conversationBack =
+        document.getElementById("conversationBack");
+    
+    const conversationKicker =
+        document.getElementById("conversationKicker");
+    
+    const conversationHeading =
+        document.getElementById("conversationHeading");
+    
+    const conversationPrompt =
+        document.getElementById("conversationPrompt");
+    
+    const conversationInput =
+        document.getElementById("conversationInput");
+    
+    const conversationTalk =
+        document.getElementById("conversationTalk");
+    
+    const conversationSend =
+        document.getElementById("conversationSend");
+    
+    
+        /* =====================================================
+           SAVE THE USER'S CHOICE
+           ===================================================== */
+    
+        function saveConversationChoice(
+            pathKey,
+            label,
+            type
+        ) {
 
         sessionStorage.setItem(
             "blendingInTalkPath",
@@ -1249,53 +1654,68 @@
     }
 
 
-    /* =====================================================
-       TEMPORARY CONVERSATION-READY SCREEN
-
-       The real conversation box comes next.
+       /* =====================================================
+       CONVERSATION ROOM
+       Opens after the user chooses their space
        ===================================================== */
-
+    
     function showConversationReady(
         heading,
         intro
     ) {
-
-        talkIntro.hidden = true;
-
-        talkPathSection.hidden = true;
-
-        subcategoryScreen.hidden = false;
-
-
-        subcategoryKicker.textContent =
-            "YOUR SPACE";
-
-        subcategoryHeading.textContent =
-            heading;
-
-        subcategoryIntro.textContent =
-            intro;
-
-
+    
         /*
-           Remove choices because
-           the user has finished selecting.
+           Hide every previous screen.
         */
-
-        subcategoryOptions.innerHTML = "";
-
-        customSpace.hidden = true;
-
-        skipCategories.hidden = true;
-
-
+    
+        talkIntro.hidden = true;
+    
+        talkPathSection.hidden = true;
+    
+        subcategoryScreen.hidden = true;
+    
+    
+        /*
+           Show the conversation room.
+        */
+    
+        conversationRoom.hidden = false;
+    
+    
+        /*
+           Carry the user's choice into the room.
+        */
+    
+        conversationKicker.textContent =
+            "YOUR SPACE";
+    
+        conversationHeading.textContent =
+            intro || heading;
+    
+        conversationPrompt.textContent =
+            "That's okay. Start wherever it makes sense.";
+    
+    
+        /*
+           Reset the writing area whenever
+           a new conversation room opens.
+        */
+    
+        conversationInput.value = "";
+    
+        conversationInput.focus();
+    
+    
+        /*
+           Start at the top of the new screen.
+        */
+    
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
-
+    
     }
-
 
     /* =====================================================
        RETURN TO MAIN 8 OPTIONS
@@ -1325,6 +1745,26 @@
                 behavior: "smooth"
             });
 
+        }
+    );
+
+    /* =====================================================
+       RETURN FROM CONVERSATION ROOM
+       ===================================================== */
+    
+    conversationBack.addEventListener(
+        "click",
+        () => {
+    
+            conversationRoom.hidden = true;
+    
+            subcategoryScreen.hidden = false;
+    
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+    
         }
     );
 
