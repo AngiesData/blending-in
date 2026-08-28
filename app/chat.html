@@ -534,7 +534,85 @@
             opacity: .48;
         }
         
+        /* ---------- MESSAGE STREAM ---------- */
+
+        .conversation-messages {
+            flex: 1;
         
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        
+            padding: 18px 8px 28px;
+        
+            overflow-y: auto;
+        }
+        
+        .conversation-messages[hidden] {
+            display: none !important;
+        }
+        
+        .message {
+            max-width: 76%;
+        
+            padding: 15px 18px;
+        
+            border-radius: 20px;
+        
+            font-size: .92rem;
+            line-height: 1.65;
+        
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+        
+        .message-user {
+            align-self: flex-end;
+        
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(172,135,185,.86),
+                    rgba(132,124,184,.86)
+                );
+        
+            color: #fff;
+        
+            border-bottom-right-radius: 7px;
+        
+            box-shadow:
+                0 10px 25px rgba(112,86,130,.14);
+        }
+        
+        .message-app {
+            align-self: flex-start;
+        
+            background: rgba(255,255,255,.42);
+        
+            color: inherit;
+        
+            border: 1px solid rgba(255,255,255,.62);
+        
+            border-bottom-left-radius: 7px;
+        
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,.7),
+                0 10px 24px rgba(79,59,98,.05);
+        }
+        
+        .message-label {
+            display: block;
+        
+            margin-bottom: 5px;
+        
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        
+            opacity: .52;
+        }
+                
         /* ---------- COMPOSER ---------- */
         
         .conversation-composer {
@@ -703,6 +781,32 @@
         
         body[data-theme="gothic"] .conversation-back {
             color: #aaa0ad;
+        }
+
+        body[data-theme="gothic"] .message-user {
+            background:
+                linear-gradient(
+                    135deg,
+                    #6d5878,
+                    #4d5069
+                );
+        
+            color: #f5eff6;
+        
+            box-shadow:
+                0 10px 28px rgba(0,0,0,.26);
+        }
+        
+        body[data-theme="gothic"] .message-app {
+            background: rgba(255,255,255,.035);
+        
+            border-color: rgba(220,205,225,.08);
+        
+            color: #ddd4df;
+        
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,.035),
+                0 12px 28px rgba(0,0,0,.22);
         }
 
 
@@ -1268,6 +1372,14 @@
 
             </div>
 
+            <!-- Conversation messages appear here -->
+
+            <div
+                class="conversation-messages"
+                id="conversationMessages"
+                hidden>
+            </div>
+
 
             <div class="conversation-composer">
 
@@ -1376,6 +1488,12 @@
 
     const conversationRoom =
     document.getElementById("conversationRoom");
+
+    const conversationEmpty =
+    document.getElementById("conversationEmpty");
+
+    const conversationMessages =
+        document.getElementById("conversationMessages");
 
     const conversationBack =
         document.getElementById("conversationBack");
@@ -1700,7 +1818,13 @@
            Reset the writing area whenever
            a new conversation room opens.
         */
-    
+
+        conversationMessages.innerHTML = "";
+        
+        conversationMessages.hidden = true;
+        
+        conversationEmpty.hidden = false;
+        
         conversationInput.value = "";
     
         conversationInput.focus();
@@ -1764,6 +1888,131 @@
                 top: 0,
                 behavior: "smooth"
             });
+    
+        }
+    );
+    
+        /* =====================================================
+       SEND A CONVERSATION MESSAGE
+       ===================================================== */
+    
+    function sendConversationMessage() {
+    
+        const message =
+            conversationInput.value.trim();
+    
+        /*
+           Don't send an empty message.
+        */
+    
+        if (!message) {
+            conversationInput.focus();
+            return;
+        }
+    
+    
+        /*
+           Remove the quiet opening message
+           and reveal the conversation stream.
+        */
+    
+        conversationEmpty.hidden = true;
+    
+        conversationMessages.hidden = false;
+    
+    
+        /*
+           Create the user's message.
+        */
+    
+        const messageBubble =
+            document.createElement("div");
+    
+        messageBubble.className =
+            "message message-user";
+    
+    
+        const messageLabel =
+            document.createElement("span");
+    
+        messageLabel.className =
+            "message-label";
+    
+        messageLabel.textContent =
+            "You";
+    
+    
+        const messageText =
+            document.createElement("div");
+    
+        messageText.textContent =
+            message;
+    
+    
+        /*
+           Put the message together
+           and add it to the room.
+        */
+    
+        messageBubble.appendChild(
+            messageLabel
+        );
+    
+        messageBubble.appendChild(
+            messageText
+        );
+    
+        conversationMessages.appendChild(
+            messageBubble
+        );
+    
+    
+        /*
+           Clear the writing box
+           and leave it ready for another thought.
+        */
+    
+        conversationInput.value = "";
+    
+        conversationInput.focus();
+    
+    
+        /*
+           Keep the newest message visible.
+        */
+    
+        messageBubble.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+        });
+    
+    }
+    
+    
+    /* ---------- SEND BUTTON ---------- */
+    
+    conversationSend.addEventListener(
+        "click",
+        sendConversationMessage
+    );
+    
+    
+    /* ---------- ENTER TO SEND ---------- */
+    
+    conversationInput.addEventListener(
+        "keydown",
+        (event) => {
+    
+            if (
+                event.key === "Enter" &&
+                !event.shiftKey
+            ) {
+    
+                event.preventDefault();
+    
+                sendConversationMessage();
+    
+            }
     
         }
     );
