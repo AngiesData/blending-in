@@ -1985,6 +1985,62 @@
             behavior: "smooth",
             block: "nearest"
         });
+
+    addBlendingInMessage(
+        "That's okay. You don't have to know where to start."
+    );
+        
+    }
+
+    
+        /* =====================================================
+       BLENDING IN RESPONSE
+       Temporary response while we build the conversation.
+       ===================================================== */
+    
+    function addBlendingInMessage(text) {
+    
+        const appBubble =
+            document.createElement("div");
+    
+        appBubble.className =
+            "message message-app";
+    
+    
+        const appLabel =
+            document.createElement("span");
+    
+        appLabel.className =
+            "message-label";
+    
+        appLabel.textContent =
+            "Blending In";
+    
+    
+        const appText =
+            document.createElement("div");
+    
+        appText.textContent =
+            text;
+    
+    
+        appBubble.appendChild(
+            appLabel
+        );
+    
+        appBubble.appendChild(
+            appText
+        );
+    
+        conversationMessages.appendChild(
+            appBubble
+        );
+    
+    
+        appBubble.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+        });
     
     }
     
